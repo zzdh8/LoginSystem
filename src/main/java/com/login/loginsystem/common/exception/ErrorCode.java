@@ -1,4 +1,4 @@
-package com.login.loginsystem.common;
+package com.login.loginsystem.common.exception;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -17,9 +17,11 @@ public enum ErrorCode {
     VALIDATION_REQUEST_HEADER_MISSING_EXCEPTION(HttpStatus.BAD_REQUEST, "요청 헤더값이 입력되지 않았습니다."),
     VALIDATION_REQUEST_PARAMETER_MISSING_EXCEPTION(HttpStatus.BAD_REQUEST, "요청 파라미터값이 입력되지 않았습니다."),
     REQUEST_METHOD_VALIDATION_EXCEPTION(HttpStatus.BAD_REQUEST, "요청 메소드가 잘못됐습니다."),
+    REQUEST_PARAMETER_VALIDATION_EXCEPTION(HttpStatus.BAD_REQUEST, "요청 파라미터가 잘못됐습니다."),
     /**
      * 401 UNAUTHORIZED
      */
+    UNAUTHORIZED(HttpStatus.UNAUTHORIZED, "인증되지 않은 사용자입니다"),
 
     /**
      * 403 FORBIDDEN

@@ -1,4 +1,4 @@
-package com.login.loginsystem.user;
+package com.login.loginsystem.user.domain;
 
 /*
  * 로그인 시스템 예제이므로 필요한 정보는
@@ -11,6 +11,7 @@ import lombok.*;
 @Entity
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class User {
