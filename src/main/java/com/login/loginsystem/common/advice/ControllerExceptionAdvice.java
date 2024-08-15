@@ -1,6 +1,7 @@
 package com.login.loginsystem.common.advice;
 
 import com.login.loginsystem.common.exception.model.CustomException;
+import com.login.loginsystem.common.exception.model.RefreshTokenInvalidException;
 import jakarta.servlet.http.HttpServletRequest;
 import com.login.loginsystem.common.dto.BaseResponse;
 import com.login.loginsystem.common.exception.ErrorCode;
@@ -72,6 +73,16 @@ public class ControllerExceptionAdvice {
     protected BaseResponse handleIllegalStateException(final IllegalStateException e) {
         log.error("Unauthorized: {}", e.getMessage());
         return BaseResponse.error(ErrorCode.UNAUTHORIZED, e.getMessage());
+    }
+
+    /**
+     * 403 FORBIDDEN
+     */
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    @ExceptionHandler(RefreshTokenInvalidException.class)
+    protected BaseResponse handleRefreshTokenInvalidException(final RefreshTokenInvalidException e) {
+        log.error("Forbidden: {}", e.getMessage());
+        return BaseResponse.error(ErrorCode.REFRESH_INVALID, e.getMessage());
     }
 
     /**

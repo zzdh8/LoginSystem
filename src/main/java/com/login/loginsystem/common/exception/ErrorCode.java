@@ -26,6 +26,8 @@ public enum ErrorCode {
     /**
      * 403 FORBIDDEN
      */
+    REFRESH_INVALID(HttpStatus.FORBIDDEN, "Refresh Token이 유효하지 않습니다"),
+
     /**
      * 404 NOT FOUND
      * */

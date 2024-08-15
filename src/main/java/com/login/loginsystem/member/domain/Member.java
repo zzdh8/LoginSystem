@@ -1,4 +1,4 @@
-package com.login.loginsystem.user.domain;
+package com.login.loginsystem.member.domain;
 
 /*
  * 로그인 시스템 예제이므로 필요한 정보는
@@ -7,6 +7,7 @@ package com.login.loginsystem.user.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 @Entity
 @Getter
@@ -14,7 +15,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-public class User {
+public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,4 +31,6 @@ public class User {
     @Column(name = "user_nickname")
     private String nickname; //닉네임
 
+    @Enumerated(EnumType.STRING)
+    private Authority authority;//권한
 }

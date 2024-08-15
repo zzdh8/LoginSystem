@@ -14,7 +14,7 @@ public enum SuccessCode {
 
 
     /*200 OK*/
-
+    USER_LOGIN_SUCCESS(HttpStatus.OK, "유저 로그인 성공"),
     ;
 
     private final HttpStatus httpStatus;

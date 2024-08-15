@@ -1,5 +1,7 @@
 package com.login.loginsystem.config;
 
+import com.login.loginsystem.auth.handler.CustomLogoutSuccessHandler;
+import com.login.loginsystem.auth.jwt.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +15,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.HeaderWriterLogoutHandler;
 import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
 import org.springframework.security.web.header.writers.ClearSiteDataHeaderWriter;
@@ -26,6 +29,11 @@ import java.util.List;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig extends Exception {
+    private final TokenProvider tokenProvider;
+    private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+    private final JwtAccessDeniedHandler jwtAccessDeniedHandler;
+    private final JwtBlackList jwtBlackList;
+    private final CustomLogoutSuccessHandler customLogoutSuccessHandler;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -51,6 +59,17 @@ public class SecurityConfig extends Exception {
                 )
                 .sessionManagement((session) -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                )
+                .formLogin(AbstractHttpConfigurer::disable)
+                .addFilterBefore(new JwtFilter(tokenProvider, jwtBlackList), UsernamePasswordAuthenticationFilter.class)
+                .exceptionHandling(
+                        (exception) -> exception
+                                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
+                                .accessDeniedHandler(jwtAccessDeniedHandler)
+                )
+                .logout((logout) -> logout
+                        .logoutUrl("/api/logout")
+                        .logoutSuccessHandler(customLogoutSuccessHandler)
                 );
 
         return http.build();
