@@ -1,10 +1,10 @@
 package com.login.loginsystem.common.advice;
 
+import com.login.loginsystem.common.dto.BaseResponse;
+import com.login.loginsystem.common.exception.ErrorCode;
 import com.login.loginsystem.common.exception.model.CustomException;
 import com.login.loginsystem.common.exception.model.RefreshTokenInvalidException;
 import jakarta.servlet.http.HttpServletRequest;
-import com.login.loginsystem.common.dto.BaseResponse;
-import com.login.loginsystem.common.exception.ErrorCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.io.IOException;
 import java.util.Objects;
 
 @Slf4j
@@ -100,7 +99,7 @@ public class ControllerExceptionAdvice {
      */
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(Exception.class)
-    protected BaseResponse handleException(final Exception e, final HttpServletRequest request) throws IOException {
+    protected BaseResponse handleException(final Exception e, final HttpServletRequest request) {
         log.error("Internal Server Error: {}", e.getMessage(), e);
         return BaseResponse.error(ErrorCode.INTERNAL_SERVER_ERROR);
     }

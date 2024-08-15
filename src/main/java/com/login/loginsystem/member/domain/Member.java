@@ -7,7 +7,6 @@ package com.login.loginsystem.member.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 @Entity
 @Getter
