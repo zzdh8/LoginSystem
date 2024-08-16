@@ -22,7 +22,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.stream.Collectors;
 
-//token을 만들어 제공해주는 클래스다.
+
 @Slf4j
 @Component
 public class TokenProvider {
@@ -60,7 +60,6 @@ public class TokenProvider {
                 .signWith(key)
                 .compact();
 
-        //Dto로 변환하여 반환한다.
         return TokenDto.builder()
                 .grantType(BEARER_TYPE)
                 .accessToken(accessToken)
@@ -87,7 +86,7 @@ public class TokenProvider {
                 .signWith(key)
                 .compact();
 
-        //Dto로 변환하여 반환한다.
+
         return TokenDto.builder()
                 .grantType(BEARER_TYPE)
                 .accessToken(accessToken)
@@ -107,11 +106,9 @@ public class TokenProvider {
                         .collect(Collectors.toList());
 
         UserDetails principal = new User(claims.getSubject(), "", authorities);
-        //객체 생성후 반환
         return new UsernamePasswordAuthenticationToken(principal, "", authorities);
     }
 
-    //token을 검증하는 메소드이다.
     public boolean validateToken(String token) {
         try {
             Jwts.parser().build().parseSignedClaims(token);
@@ -127,7 +124,7 @@ public class TokenProvider {
         }
         return false;
     }
-    //accessToken에서 claims 부분을 파싱하는 메소드
+
     private Claims parseClaims(String accessToken) {
         try {
             return Jwts.parser().build().parseSignedClaims(accessToken).getPayload();
