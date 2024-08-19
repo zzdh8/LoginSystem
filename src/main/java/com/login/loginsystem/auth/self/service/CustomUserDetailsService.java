@@ -1,4 +1,4 @@
-package com.login.loginsystem.auth.service;
+package com.login.loginsystem.auth.self.service;
 
 import com.login.loginsystem.member.domain.Member;
 import com.login.loginsystem.member.repository.MemberRepository;

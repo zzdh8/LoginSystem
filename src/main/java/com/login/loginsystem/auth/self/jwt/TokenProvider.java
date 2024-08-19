@@ -1,7 +1,7 @@
-package com.login.loginsystem.auth.jwt;
+package com.login.loginsystem.auth.self.jwt;
 
 
-import com.login.loginsystem.auth.util.dto.TokenDto;
+import com.login.loginsystem.auth.self.util.dto.TokenDto;
 import com.login.loginsystem.member.domain.Member;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;

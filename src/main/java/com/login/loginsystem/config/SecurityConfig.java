@@ -1,7 +1,7 @@
 package com.login.loginsystem.config;
 
-import com.login.loginsystem.auth.handler.CustomLogoutSuccessHandler;
-import com.login.loginsystem.auth.jwt.*;
+import com.login.loginsystem.auth.self.handler.CustomLogoutSuccessHandler;
+import com.login.loginsystem.auth.self.jwt.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

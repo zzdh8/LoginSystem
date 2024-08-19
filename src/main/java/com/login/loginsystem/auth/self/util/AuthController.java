@@ -1,8 +1,8 @@
-package com.login.loginsystem.auth.util;
+package com.login.loginsystem.auth.self.util;
 
-import com.login.loginsystem.auth.util.dto.AuthReqDto;
-import com.login.loginsystem.auth.util.dto.TokenDto;
-import com.login.loginsystem.auth.service.AuthService;
+import com.login.loginsystem.auth.self.util.dto.AuthReqDto;
+import com.login.loginsystem.auth.self.util.dto.TokenDto;
+import com.login.loginsystem.auth.self.service.AuthService;
 import com.login.loginsystem.common.dto.BaseResponse;
 import com.login.loginsystem.common.exception.SuccessCode;
 import com.login.loginsystem.common.exception.model.RefreshTokenInvalidException;

@@ -1,9 +1,9 @@
-package com.login.loginsystem.auth.service;
+package com.login.loginsystem.auth.self.service;
 
-import com.login.loginsystem.auth.jwt.JwtBlackList;
-import com.login.loginsystem.auth.jwt.TokenProvider;
-import com.login.loginsystem.auth.util.dto.AuthReqDto;
-import com.login.loginsystem.auth.util.dto.TokenDto;
+import com.login.loginsystem.auth.self.jwt.JwtBlackList;
+import com.login.loginsystem.auth.self.jwt.TokenProvider;
+import com.login.loginsystem.auth.self.util.dto.AuthReqDto;
+import com.login.loginsystem.auth.self.util.dto.TokenDto;
 import com.login.loginsystem.common.exception.model.RefreshTokenInvalidException;
 import com.login.loginsystem.member.domain.Member;
 import com.login.loginsystem.member.repository.MemberRepository;

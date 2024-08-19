@@ -1,6 +1,6 @@
-package com.login.loginsystem.auth.handler;
+package com.login.loginsystem.auth.self.handler;
 
-import com.login.loginsystem.auth.jwt.JwtBlackList;
+import com.login.loginsystem.auth.self.jwt.JwtBlackList;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

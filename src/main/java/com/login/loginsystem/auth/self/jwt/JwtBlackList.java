@@ -1,6 +1,6 @@
-package com.login.loginsystem.auth.jwt;
+package com.login.loginsystem.auth.self.jwt;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import java.time.Duration;
 
 @Service
+@RequiredArgsConstructor
 public class JwtBlackList {
 
     private static final String REFRESH_BLACKLIST_PREFIX = "refresh_blacklist:";
-    @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
     public void blacklistToken(String token, Duration duration) {
