@@ -17,6 +17,14 @@ spring:
   session:
     jdbc:
       initialize-schema: always
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: ${GITHUB_CLIENT_ID}
+            client-secret: ${GITHUB_CLIENT_SECRET}
+            scope: email
 logging.level:
   org.hibernate.SQL: debug
   org.hibernate.type: debug
