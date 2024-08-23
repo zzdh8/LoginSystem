@@ -1,6 +1,6 @@
-package com.login.loginsystem.common.exception.model;
+package com.login.loginsystem.global.common.exception.model;
 
-import com.login.loginsystem.common.exception.ErrorCode;
+import com.login.loginsystem.global.common.exception.ErrorCode;
 import lombok.Getter;
 @Getter
 public class CustomException extends RuntimeException {

@@ -1,4 +1,4 @@
-package com.login.loginsystem.config;
+package com.login.loginsystem.global.config;
 
 import com.login.loginsystem.auth.self.handler.CustomLogoutSuccessHandler;
 import com.login.loginsystem.auth.self.jwt.*;

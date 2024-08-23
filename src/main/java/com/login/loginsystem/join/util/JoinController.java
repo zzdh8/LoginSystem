@@ -1,7 +1,7 @@
 package com.login.loginsystem.join.util;
 
-import com.login.loginsystem.common.dto.BaseResponse;
-import com.login.loginsystem.common.exception.SuccessCode;
+import com.login.loginsystem.global.common.dto.BaseResponse;
+import com.login.loginsystem.global.common.exception.SuccessCode;
 import com.login.loginsystem.join.dto.RequestJoinDto;
 import com.login.loginsystem.join.service.JoinService;
 import lombok.RequiredArgsConstructor;

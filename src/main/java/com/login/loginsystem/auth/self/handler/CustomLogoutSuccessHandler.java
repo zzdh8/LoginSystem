@@ -4,7 +4,7 @@ import com.login.loginsystem.auth.self.jwt.JwtBlackList;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.stereotype.Component;
@@ -14,9 +14,9 @@ import java.io.IOException;
 import java.time.Duration;
 
 @Component
+@RequiredArgsConstructor
 public class CustomLogoutSuccessHandler implements LogoutSuccessHandler {
-    @Autowired
-    private JwtBlackList jwtBlackList;
+    private final JwtBlackList jwtBlackList;
 
     @Override
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response,

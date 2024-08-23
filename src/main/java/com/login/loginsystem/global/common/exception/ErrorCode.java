@@ -1,4 +1,4 @@
-package com.login.loginsystem.common.exception;
+package com.login.loginsystem.global.common.exception;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

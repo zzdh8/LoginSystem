@@ -1,4 +1,4 @@
-package com.login.loginsystem.common.exception.model;
+package com.login.loginsystem.global.common.exception.model;
 
 import lombok.Getter;
 

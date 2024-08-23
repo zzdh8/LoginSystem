@@ -1,9 +1,9 @@
-package com.login.loginsystem.common.advice;
+package com.login.loginsystem.global.common.advice;
 
-import com.login.loginsystem.common.dto.BaseResponse;
-import com.login.loginsystem.common.exception.ErrorCode;
-import com.login.loginsystem.common.exception.model.CustomException;
-import com.login.loginsystem.common.exception.model.RefreshTokenInvalidException;
+import com.login.loginsystem.global.common.dto.BaseResponse;
+import com.login.loginsystem.global.common.exception.ErrorCode;
+import com.login.loginsystem.global.common.exception.model.CustomException;
+import com.login.loginsystem.global.common.exception.model.RefreshTokenInvalidException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

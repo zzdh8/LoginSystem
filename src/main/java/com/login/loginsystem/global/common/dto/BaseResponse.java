@@ -1,8 +1,8 @@
-package com.login.loginsystem.common.dto;
+package com.login.loginsystem.global.common.dto;
 
 
-import com.login.loginsystem.common.exception.ErrorCode;
-import com.login.loginsystem.common.exception.SuccessCode;
+import com.login.loginsystem.global.common.exception.ErrorCode;
+import com.login.loginsystem.global.common.exception.SuccessCode;
 import lombok.*;
 
 

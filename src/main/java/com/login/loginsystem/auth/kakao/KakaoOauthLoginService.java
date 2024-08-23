@@ -19,9 +19,8 @@ public class KakaoOauthLoginService {
 
     private static final RestTemplate restTemplate = new RestTemplate();
 
-    private static final HttpHeaders httpHeaders = new HttpHeaders();
-
     public KakaoTokenResponse getTokensInfo(String code) {
+        HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded;charset=utf-8");
 
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
